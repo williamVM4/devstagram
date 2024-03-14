@@ -63,5 +63,8 @@ $request->user()->id //Usuario que manda el request
 
 php artisan route:cache
 php artisan route:list
+php artisan view:clear
 
 php artisan make:migrate add_imagen_field_to_users_table
+
+php artisan make:component ListarPost
