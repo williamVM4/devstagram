@@ -16,23 +16,29 @@
             </form>
         </div>
         <div class="md:w-1/2 p-8 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
-            <form action="{{ route('register') }}" method="POST" novalidate>
+            <form action="{{ route('posts.store') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
-                    <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="title" class="mb-2 block uppercase text-gray-500 font-bold">
                         Titulo
                     </label>
-                    <input id="titulo" name="titulo" type="text" placeholder="Titulo de la publicación" class="border p-3 w-full rounded-lg  @error('titulo') border-red-500 @enderror" value="{{old('titulo')}}"/>
-                    @error('titulo')
+                    <input id="title" name="title" type="text" placeholder="Titulo de la publicación" class="border p-3 w-full rounded-lg  @error('title') border-red-500 @enderror" value="{{old('title')}}"/>
+                    @error('title')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="content" class="mb-2 block uppercase text-gray-500 font-bold">
                         Descripción
                     </label>
-                    <textarea id="descripcion" name="descripcion" placeholder="Descripción de la publicación" class="border p-3 w-full rounded-lg  @error('descripcion') border-red-500 @enderror">{{old('descripcion')}}</textarea>    
-                    @error('descripcion')
+                    <textarea id="content" name="content" placeholder="Descripción de la publicación" class="border p-3 w-full rounded-lg  @error('content') border-red-500 @enderror">{{old('content')}}</textarea>    
+                    @error('content')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <input type="hidden" name="image" id="image" value="{{old('image')}}"/>
+                    @error('image')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
