@@ -1,0 +1,67 @@
+Comandos laravel
+
+clonar repo
+docker run --rm --interactive --tty -v $(pwd):/app composer install
+
+
+
+comandos composer
+
+php artisan serve
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:refresh
+
+
+
+comandos sail
+
+./vendor/bin/sail up
+
+./vendor/bin/sail php -v
+
+./vendor/bin/sail php artisan migrate
+
+./vendor/bin/sail npm
+
+./vendor/bin/sail mysql
+
+
+
+echo "<pre>";
+var_dump($empleado);
+echo "</pre>";
+
+
+parent::(metodo de la clase padre)
+
+:: para llamar metodos estaticos
+
+self::$miVariableEstatica
+
+dd('algo');
+
+
+ composer require intervention/image "^2.3" --with-all-dependencies
+
+
+php artisan tinker
+
+
+App\Models\Post::factory()
+
+Post::factory()->times(100)->create();
+
+php artisan migrate:rollback --step=1
+
+
+php artisan make:policy PostPolicy --model=Post
+
+php artisan make:model --migration --controller Like
+
+$request->user()->id //Usuario que manda el request
+
+php artisan route:cache
+php artisan route:list
+
+php artisan make:migrate add_imagen_field_to_users_table
